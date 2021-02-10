@@ -25,7 +25,7 @@ export class ServerComponent implements OnInit {
 
   onEdit() {
     // this.router.navigate(['/servers', this.server.id, 'edit'], {queryParams: {allowEdit: '1'}, fragment: "loading"});
-    this.router.navigate(['edit'], {relativeTo: this.activatedRoute, queryParamsHandling: 'merge'});
+    this.router.navigate(['edit'], {relativeTo: this.activatedRoute, queryParamsHandling: 'preserve'});
   }
 
 }
