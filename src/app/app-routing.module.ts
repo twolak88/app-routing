@@ -9,6 +9,8 @@ import { UserComponent } from './users/user/user.component';
 import { UsersComponent } from './users/users.component';
 
 const appRoutes: Routes = [
+  // { path: '', redirectTo: '/not-found', pathMatch: 'full' } //pathMatch should be used here to match exact patch
+                                                               //without this it will mach all paths and alway redirect to
   { path: '', component: HomeComponent },
   { path: 'users', component: UsersComponent, children: [
     { path: ':id/:name', component: UserComponent } //dynamic parameter id
