@@ -1,4 +1,4 @@
-<h4 *ngIf="!allowEdit; else allowed" class="text-danger">You are not allowed to edit</h4>
+<h4 *ngIf="!allowEdit; else allowed" class="alert-danger">You are not allowed to edit</h4>
 <ng-template #allowed>
   <div class="form-group">
     <label for="name">Server Name</label>
