@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ServersService } from '../services/servers.service';
 
 @Component({
@@ -12,7 +12,8 @@ export class ServerComponent implements OnInit {
 
 
   constructor(private serversService: ServersService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
@@ -20,6 +21,11 @@ export class ServerComponent implements OnInit {
         this.server = this.serversService.getServer(+params['id']);
       }
     );
+  }
+
+  onEdit() {
+    // this.router.navigate(['/servers', this.server.id, 'edit'], {queryParams: {allowEdit: '1'}, fragment: "loading"});
+    this.router.navigate(['edit'], {relativeTo: this.activatedRoute, queryParamsHandling: 'merge'});
   }
 
 }
