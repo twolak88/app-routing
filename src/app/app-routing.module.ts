@@ -34,6 +34,7 @@ const appRoutes: Routes = [
 ]
 
 @NgModule({
+  // imports: [RouterModule.forRoot(appRoutes, {useHash:true})], //http://localhost:4200/#/servers
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule] //export RouterModule to other modules that imports AppRoutingModule
 })
